@@ -1,17 +1,33 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+import WebApp from '@twa-dev/sdk'
+
+import { ref } from 'vue'
+
+const count = ref(0)
 </script>
 
 <template>
   <div>
     <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
+      <img src={viteLogo} class="logo" alt="Vite logo" />
     </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+    <a href="https://react.dev" target="_blank">
+      <img src={reactLogo} class="logo react" alt="React logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <h1>Vite + React</h1>
+  <div class="card">
+    <button @click="count.value++">
+      count is {{ count }}
+    </button>
+  </div>
+  {/* Here we add our button with alert callback */}
+  <div class="card">
+    <button @click="WebApp.showAlert(Hello World! Current count is ${count.value})">
+      Show Alert
+    </button>
+  </div>
 </template>
 
 <style scoped>
