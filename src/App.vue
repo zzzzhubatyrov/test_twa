@@ -22,7 +22,6 @@ const count = ref(0)
       count is {{ count }}
     </button>
   </div>
-  {/* Here we add our button with alert callback */}
   <div class="card">
     <button @click="WebApp.showAlert(Hello World! Current count is ${count.value})">
       Show Alert
